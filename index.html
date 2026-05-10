@@ -9,77 +9,186 @@
       font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #0a0f24, #1c2a4a);
       color: white;
-      text-align: center;
-      padding: 40px;
     }
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      background: rgba(255, 255, 255, 0.08);
-      padding: 30px;
-      border-radius: 12px;
+    /* NAVBAR */
+    .navbar {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: center;
       backdrop-filter: blur(6px);
-      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      position: sticky;
+      top: 0;
     }
 
-    h1 {
-      font-size: 42px;
+    .navbar a {
+      color: white;
+      margin: 0 20px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .navbar a:hover {
+      color: #7ab6ff;
+    }
+
+    /* HEADER */
+    .header {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .header h1 {
+      font-size: 48px;
       margin-bottom: 10px;
     }
 
+    .header p {
+      font-size: 20px;
+      opacity: 0.9;
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    /* SECTION TITLE */
     h2 {
-      margin-top: 40px;
+      margin-top: 50px;
       border-bottom: 1px solid rgba(255,255,255,0.3);
       padding-bottom: 10px;
+      font-size: 32px;
     }
 
-    p, li {
-      font-size: 18px;
-      line-height: 1.6;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .section {
+    /* CARDS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
       margin-top: 30px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 20px;
+      border-radius: 12px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 22px;
+    }
+
+    .card p {
+      font-size: 16px;
+      opacity: 0.9;
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <a href="#plc">PLC</a>
+    <a href="#solidworks">SolidWorks</a>
+    <a href="#programmazione">Programmazione</a>
+    <a href="#certificazioni">Certificazioni</a>
+  </div>
+
+  <!-- HEADER -->
+  <div class="header">
     <h1>Portfolio di Marco Bocchi</h1>
     <p>Tecnico specializzato in automazione, PLC Siemens, SolidWorks e programmazione.</p>
-
-    <div class="section">
-      <h2>Progetti PLC</h2>
-      <ul>
-        <li>• Simulazione impianto con TIA Portal + Factory I/O</li>
-        <li>• Logiche Ladder e SCL</li>
-        <li>• Automazione con PLC Zelio (progetto ozono)</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>Progetti SolidWorks</h2>
-      <ul>
-        <li>• Modellazione 3D componenti meccanici</li>
-        <li>• Tavole tecniche 2D</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>Programmazione</h2>
-      <ul>
-        <li>• C (buono)</li>
-        <li>• Python (buono)</li>
-        <li>• C# (base)</li>
-      </ul>
-    </div>
   </div>
+
+  <div class="container">
+
+    <!-- PROGETTI PLC -->
+    <h2 id="plc">Progetti PLC</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Simulazione impianto con TIA Portal + Factory I/O</h3>
+        <p>Logiche di movimentazione, sensori, attuatori, gestione allarmi, Ladder e SCL.</p>
+      </div>
+
+      <div class="card">
+        <h3>Automazione con PLC Zelio</h3>
+        <p>Supporto alla programmazione Ladder per sistema di disinfezione utensili con ozono.</p>
+      </div>
+    </div>
+
+    <!-- SOLIDWORKS -->
+    <h2 id="solidworks">Progetti SolidWorks</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Modellazione 3D</h3>
+        <p>Componenti meccanici, assiemi e modellazione parametrica.</p>
+      </div>
+
+      <div class="card">
+        <h3>Tavole tecniche 2D</h3>
+        <p>Quote, tolleranze, sezioni e messe in tavola professionali.</p>
+      </div>
+    </div>
+
+    <!-- PROGRAMMAZIONE -->
+    <h2 id="programmazione">Programmazione</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>C</h3>
+        <p>Buona conoscenza di logiche, strutture dati e programmazione procedurale.</p>
+      </div>
+
+      <div class="card">
+        <h3>Python</h3>
+        <p>Script, automazioni, gestione file, piccole applicazioni.</p>
+      </div>
+
+      <div class="card">
+        <h3>C#</h3>
+        <p>Basi di programmazione orientata agli oggetti.</p>
+      </div>
+    </div>
+
+    <!-- CERTIFICAZIONI -->
+    <h2 id="certificazioni">Certificazioni</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>PLC Siemens TIA Portal</h3>
+        <p>Corso completo (445 ore) – Udemy.</p>
+      </div>
+
+      <div class="card">
+        <h3>Excel Avanzato 2019</h3>
+        <p>Certificazione con valutazione 100/100.</p>
+      </div>
+
+      <div class="card">
+        <h3>AutoCAD 3D 2020</h3>
+        <p>Corso da 30 ore con valutazione 87/100.</p>
+      </div>
+
+      <div class="card">
+        <h3>Zeiss Calypso</h3>
+        <p>Corso base presso Zeiss Academy.</p>
+      </div>
+    </div>
+
+  </div>
+
 </body>
 </html>
+
